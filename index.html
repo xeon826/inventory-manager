@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Umbrella Manufacturing Co</title>
+</head>
+<div class="loader-create">
+  <div class="container">
+    <h1>Purchase Inventory</h1>
+    <select data-action="prod_dropdown" class="custom-select">
+  </select>
+    <input placeholder="Starting Inventory" class="starting">
+    <input placeholder="Inventory Received" class="received">
+    <input placeholder="Vendor ID" class="vendorId">
+    <input placeholder="Minimum Required" class="minimum-required">
+    <button class="create-confirm">Create</button>
+    <p>here</p>
+  </div>
+</div>
+
+<body>
+  <!-- manage product holder -->
+  <div class="mp_h">
+    <div class="container manage-table">
+      <h1>Manage Product</h1>
+      <div class="form-row">
+        <div class="form-group col-sm-6">
+          <label for="product-name">Product Name</label>
+          <input id="product-name" value="" class="product-name form-control">
+          <label for="label">Label</label>
+          <input id="label" value="" class="label form-control">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="starting-inventory">Starting Inventory</label>
+          <input id="starting-inventory" value="" class="starting-inventory form-control">
+          <label for="minimum-required">Minimum Required</label>
+          <input id="minimum-required" value="" class="minimum-required form-control">
+        </div>
+      </div>
+      <button data-id="" data-action="edit_product" class="get edit-product btn btn-primary">Confirm</button>
+      <p class="parCreate"></p>
+    </div>
+  </div>
+  <!-- manage incoming holder -->
+  <div class="mi_h">
+    <div class="container manage-table">
+      <h1>Add Incoming</h1>
+      <div class="form-row">
+        <div class="form-group col-sm-6">
+          <label for="product-name">Product Name</label>
+          <select class="form-control item-dropdown">
+    </select>
+          <label for="purchase-date">Purchase Date</label>
+          <input id="purchase-date" value="" class="purchase-date form-control">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="number-received">Number Received</label>
+          <input id="number-received" value="" class="number-received form-control">
+          <label for="vendor">Vendor</label>
+          <select class="form-control vendor-dropdown">
+        </select>
+        </div>
+      </div>
+      <button data-id="" data-action="edit_product" class="get edit-product btn btn-primary">Confirm</button></br>
+      <p class="parCreate"></p>
+    </div>
+  </div>
+  <!-- edit table container - fixed -->
+  <div class="mod">
+  </div>
+  <h2>Inventory Management System</h2>
+  <p class="errorReturn"></p>
+  <div class="edit-wrapper">
+    <div class="edit-view">
+      <!-- edit table buttons -->
+      <div data-action="manage_products" class="edit view get">
+        Products
+        <i class="fas fa-sitemap"></i>
+      </div>
+      <div data-action="manage_incoming" class="edit view get">
+        Incoming
+        <i class="fas fa-angle-double-left"></i>
+      </div>
+      <div data-action="manage_outgoing" class="edit view get">
+        Outgoing
+        <i class="fas fa-angle-double-right"></i>
+      </div>
+      <div data-action="view_vendors" class="edit view get">
+        Vendors
+        <i class="fas fa-store-alt"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- main nav -->
+  <div class="nav-bar">
+    <div data-action="get_current_inv" class="view current-inventory get">
+      Current Inventory
+    </div>
+    <div data-action="get_incoming" class="view incoming-purchases get">
+      Incoming Purchases
+    </div>
+    <div data-action="get_outgoing" class="view outgoing-orders get">
+      Outgoing Orders
+    </div>
+    <div data-action="get_reports" class="view reports get">
+      Reports
+    </div>
+    <div class="view-edit edit-tables">
+      Manage
+    </div>
+
+  </div>
+  <main>
+  </main>
+  <div class="table-wrapper">
+  </div>
+</body>
+
+</html>
